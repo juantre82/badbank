@@ -1,9 +1,9 @@
 function Home(){
     return (
         <Card
-        bgcolor="danger"
+        bgcolor="secondary"
         txtcolor="white"
-        header="Bank Landing Page"
+        header={<h3>Bank Landing Page</h3>}
         title="Welcome to the Bank"
         text="You can use this bank"
         body={(<img src="bank.png" className="img-fluid" alt="Responsive image"/>)}

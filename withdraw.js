@@ -1,5 +1,5 @@
 function Withdraw(){
     return (
-        <p>withdraw</p>
+        <h1>Withdraw Page</h1>
     )
   }

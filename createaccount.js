@@ -30,14 +30,17 @@ function CreateAccount(){
       setPassword('');
       setShow(true);
     }
-  
+
     return (
       <Card
-        bgcolor="dark"
-        header="Create Account"
+        bgcolor="secondary"
+        header={<h3>Create Account</h3>}
         status={status}
         body={show ? (  
                 <>
+                <div>
+                  <h4>Create An Account and Recieve An Initial $100</h4>
+                </div>
                 Name<br/>
                 <input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br/>
                 Email address<br/>

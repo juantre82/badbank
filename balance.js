@@ -1,8 +1,5 @@
 function Balance(){
-    const ctx = React.useContext(UserContext);
     return (
-      <h1>Balance<br/>
-        {JSON.stringify(ctx)}
-      </h1>
-    );  
+      <h1>Balance Page</h1>
+    )
   }

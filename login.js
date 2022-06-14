@@ -1,11 +1,25 @@
 function Login(){
+//logic for login
+
+
+//Validation for login
+
+
+//Display for login card
     return (
     <Card
-    bgcolor="info"
-    header="Login"
-    title="Welcome to the Bank"
-    text="You can use this bank"
-    body={(<img src="bank.png" className="img-fluid" alt="Responsive image"/>)}
+    bgcolor="secondary"
+    header={<h3>Login</h3>}
+    text="Please Enter your Login Creditials"
+    body={(<>
+    <form>
+    <input type="email" className="form-control" id="email" placeholder="Enter Email" required/><br/>
+    <input type="password" className="form-control" id="password" placeholder="Enter Password" required/><br/>
+    <div className="button-container"><br/>
+      <input type="submit"/>
+    </div>
+    </form>
+    </>)}
     />
     )
   }
