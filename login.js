@@ -1,25 +1,59 @@
 function Login(){
-//logic for login
+  const [show, setShow]         = React.useState(true);
+  const [status, setStatus]     = React.useState('');
+  const [email, setEmail]       = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const ctx = React.useContext(UserContext);  
+  var ctx2 = Array(ctx);
 
-
-//Validation for login
-
-
-//Display for login card
-    return (
-    <Card
-    bgcolor="secondary"
-    header={<h3>Login</h3>}
-    text="Please Enter your Login Creditials"
-    body={(<>
-    <form>
-    <input type="email" className="form-control" id="email" placeholder="Enter Email" required/><br/>
-    <input type="password" className="form-control" id="password" placeholder="Enter Password" required/><br/>
-    <div className="button-container"><br/>
-      <input type="submit"/>
-    </div>
-    </form>
-    </>)}
-    />
-    )
+  function validate(field, label){
+      if (!field) {
+        setStatus('Error: ' + label);
+        setTimeout(() => setStatus(''),3000);
+        return false;
+      }
+      return true;
   }
+
+  function handleCreate(){
+    console.log(email,password);
+    if (!validate(email,    'email'))    return;
+    if (!validate(password, 'password')) return;
+    ctx2.push({email});
+    ctx2.push({password});
+    setShow(false);
+    console.log(ctx);
+    console.log(ctx2);
+  }    
+
+  function clearForm(){
+    setEmail('');
+    setPassword('');
+    setShow(true);
+  }
+
+  return (
+    <Card
+      bgcolor="dark"
+      header="Login"
+      status={status}
+      body={show ? (  
+              <>
+              Email<br/>
+              <input type="input" className="form-control bg-dark" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)} /><br/>
+              Password<br/>
+              <input type="password" className="form-control bg-dark" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
+              <button type="submit" className="btn btn-light" onClick={handleCreate}>Login</button>
+              </>
+            ):(
+              <>
+              <h5>Success</h5>
+              <a href="#/deposit/">
+              <button type="submit" className="btn btn-light">Make a deposit</button>
+              </a>
+              <button type="submit" className="btn btn-dark" onClick={clearForm}>Logout</button>
+              </>
+            )}
+    />
+  )
+}

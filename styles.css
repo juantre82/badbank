@@ -1,9 +1,16 @@
 body{
-    background-color: cornflowerblue;
+    background-color: #343a40;
+    color: rgb(255, 255, 255);
+    text-align: center;
 }
 #card{
     display: flex;
     margin: 0 auto;
+    margin-top: 20px;
     text-align: center;
-    border-color: black;
+    border-color: rgb(0, 0, 0);
+}
+
+.navbar {
+    border-bottom: solid 1px black;
 }
