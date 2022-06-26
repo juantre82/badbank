@@ -14,3 +14,10 @@ body{
 .navbar {
     border-bottom: solid 1px black;
 }
+
+.form-control{
+    border-color:rgb(0, 0, 0);
+}
+.card-header{
+    background-color: rgb(0, 0, 0);
+}

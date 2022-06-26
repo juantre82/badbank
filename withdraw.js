@@ -43,9 +43,10 @@ function Withdraw(){
         bgcolor="dark"
         header="Withdraw"
         status={status}
-        title={newBalance}
         body={show?(
             <>
+            <h5>Balance: ${balance}</h5>
+            <br/>
             Withdrawal Amount<br/>
             <input type="number-input" className="form-control bg-dark" id="number" placeholder='Withdrawal Amount $' value={withdrawalAmount} onChange={e => setWithDrawalAmount(e.currentTarget.value)} /> <br/>
             <button type="submit" className="btn btn-light" onClick={handleCreate}>Withdraw</button>
